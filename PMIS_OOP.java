@@ -102,3 +102,53 @@ public class Main{
         b1.displayInfo("Shreya",100000);
     }
 }
+//Task : Ex.3]The Academy Admissions Portal
+
+class StudentProfile{
+    String fullName;
+    int studentID;
+    double finalScore;
+
+    StudentProfile(String fullName, int studentID, double finalScore){
+       //Entrance exam takers
+       this.fullName = fullName;
+       this.studentID = studentID;
+       this.finalScore = finalScore;
+    }
+
+    StudentProfile(String fullName, int studentID ){
+       //Direct Walk-ins
+       this.fullName = fullName;
+       this.studentID = studentID;
+       this.finalScore = 0.0;
+    }
+
+    char getGrade(){
+        if(finalScore>=90){
+            return 'A';
+        }else if(finalScore>=75){
+            return 'B';
+        }else if(finalScore>=50){
+            return 'C';
+        }else{
+            return 'F';
+        }
+    }
+    void printReportCard(){
+        System.out.println("Name: "+fullName);
+        System.out.println("Student ID: "+studentID);
+        System.out.println("Final Score: "+finalScore);
+        System.out.println("Grade: "+getGrade());
+        System.out.println("------------------------");
+    }
+}
+public class Main{
+    public static void main(String[] args) {
+       //Exam taker
+       StudentProfile s1 = new StudentProfile("Shreya",1,94.00);
+       //Walk-ins
+       StudentProfile s2 = new StudentProfile("Null",2);
+       s1.printReportCard();
+       s2.printReportCard();
+    }
+}
