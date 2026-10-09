@@ -102,6 +102,47 @@ public class Main{
         b1.displayInfo("Shreya",100000);
     }
 }
+//Problem Set 1 : Ex.1]The Campus Coffee Cart Wallet
+
+/* class CoffeeWallet{
+    String customerName;
+    double balance;
+
+    CoffeeWallet(String customerName, double balance){
+        this.customerName = customerName;
+        this.balance = balance;
+    }
+    void addFunds(double amount){
+        balance += amount;
+        System.out.println("Added Rs.: "+amount);
+        System.out.println("Balance: "+balance);
+    }
+    void purchase(double amount){
+        if(amount>balance){
+            balance-= amount;
+            System.out.println("Purchase Successful!");
+            System.out.println("Amount deducted: "+amount);
+            System.out.println("Balance: "+balance);
+        }else{
+            System.out.println("Insufficient Balance!");
+        }
+        void displayInfo(){
+            System.out.println("Customer Name: "+customerName+" | Balance: "+balance);
+        }
+    }
+}
+public class Main{
+    public static void main(String[] args) {
+        CoffeeWallet c1 = new CoffeeWallet("Shreya",10000);
+        c1.displayInfo();
+        c1.addFunds(200);
+        c1.purchase(150); 
+        c1.purchase(amount:800);
+        c1.displayInfo();
+        
+    }
+}
+ */
 //Task : Ex.3]The Academy Admissions Portal
 
 class StudentProfile{
@@ -152,3 +193,161 @@ public class Main{
        s2.printReportCard();
     }
 }
+// Problem Set 2 :Ex.1] 
+/* class Employee{
+    //Private fields (Encapsulation)
+    private int id;
+    private String name;
+    private double salary;
+    //Getters
+    public Employee(int id,String name, double salary){
+        this.id = id;
+        this.name = name;
+        if(salary >=0){
+            this.salary = salary;
+        }else{
+            this.salary = 0.0;
+        }
+    }
+    //3.Getters
+    public int getId(){
+        return id;
+    }
+    public String getName(){
+        return name;
+    }
+    public double getSalary(){
+        return salary;
+    }
+    //4.Setter with validation
+    public void setSalary(double salary){
+        if(salary>=0){
+            this.salary = salary;
+        }else{
+            System.out.println("Error: Salary cannot be negative.");
+        }
+    }
+    //5.Business Logic Method
+    public void giveRaise(double percent){
+        if(percent > 0){
+            double raiseAmount = this.salary * (percent / 100.0);
+            this.salary += raiseAmount;
+            System.out.println(name+" received a "+percent+" % raise. New Salary: Rs. "+this.salary);
+        }else{
+            System.out.println("Raise percentage must be positive");
+        }  
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Employee emp = new Employee(101,"Shreya",1200000.00);
+        System.out.println("Initial Salary: "+emp.getSalary());
+        //Apply raise
+        emp.giveRaise(8);
+        emp.setSalary(-25000);
+        //Final check
+        System.out.println("Final Verified Salary: "+emp.getSalary());
+    }
+} */
+//Date : 09/10/2026 : Friday
+
+//[1] Single Inheritance
+/* class Animal{
+    void eat(){
+        System.out.println("This Animal eats Food.");
+    }
+}
+class Dog extends Animal{
+    void bark(){
+        System.out.println("The Dog barks.");
+    }
+}
+public class Main{
+    public static void main(String[] args) {
+        Dog myDog = new Dog();
+        myDog.eat();
+        myDog.bark();
+    }
+}
+ */
+//[2] Multi-level Inheritance
+
+/* class ElectronicDevices{
+    void poweron(){
+        System.out.println("Device power on.");
+    }
+}
+// Child Class 1
+class MobilePhone extends ElectronicDevices{
+    void makecall(){
+        System.out.println("Make a call.");
+    }
+}
+//Child Class 2
+class SmartPhone extends MobilePhone{
+    void browse(){
+        System.out.println("Browse Data.");
+    }
+}
+
+public class Main{
+    public static void main(String[] args) {
+        SmartPhone samsung = new SmartPhone();
+        samsung.makecall();
+        samsung.browse();
+        samsung.poweron();
+    }
+} */
+
+//[3] Hierarchical Inheritance
+//common parent class
+/* class Shape{
+    String color = "Blue";
+}
+//child class 1
+class Circle extends Shape{
+    void drawCircle(){
+        System.out.println("Draw a "+color+ " Circle.");
+    }
+}
+
+class Rectangle extends Shape{
+    void drawRectangle(){
+        System.out.println("Draw a "+color+" Rectangle.");
+    }
+}
+
+public class Main{
+    public static void main(String[] args) {
+        Circle c1 = new Circle();
+        Rectangle r1 = new Rectangle();
+        c1.drawCircle();
+        r1.drawRectangle();
+    }
+} */
+//[4] Multiple Inheritance Issue : Resolution is Interfaces
+
+/* interface Mother{
+    void message();
+}
+interface Father{
+    void message();
+}
+
+class Child implements Mother,Father{
+    @Override 
+    public void message(){
+        System.out.println("Grateful to Mom and Dad!");
+    }
+}
+
+public class Main{
+    public static void main(String[] args) {
+        Child c = new Child();
+        c.message();
+        Mother m = new Child();
+        c.message();
+        Father f = new Child();
+        f.message();
+    }
+} */
